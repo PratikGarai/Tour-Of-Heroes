@@ -1,5 +1,21 @@
-<div class="hreo-div">
-<h2>{{hero.name | uppercase }}'s details : </h2>
-<div><span class="hero-id">Id : {{hero.id}}</span></div>
-<div><span class="hero-name">Name : {{hero.name}}</span></div>
+<div class="hero-div">
+	<h2>{{hero.name | uppercase }}'s details : </h2>
+	<div>
+		<span class="hero-id">
+			Id : {{hero.id}}
+		</span>
+	</div>
+	<div>
+		<span class="hero-name">
+			Name : {{hero.name}}
+		</span>
+	</div>
+</div>
+
+<div class="hero-edit">
+	<div class="edit-header">
+		<h2>Edit Hero</h2>
+	</div>
+	<label for="name"> Name : </label>
+	<input type="text" [(ngModel)]="hero.name" name="name" />
 </div>
