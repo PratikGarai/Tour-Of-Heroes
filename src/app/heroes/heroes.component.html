@@ -1,3 +1,14 @@
+<div class="hero-list-div">
+	<h2> LIst of heroes : </h2>
+	<ul class="hero-list">
+		<li *ngFor="let hero_item of heroes">
+			<span class="hero-list-badge"> {{hero_item.id}}</span>
+			<span class="hero-list-name"> {{hero_item.name}}</span>
+		</li>
+	</ul>
+</div>
+<hr>
+
 <div class="hero-div">
 	<h2>{{hero.name | uppercase }}'s details : </h2>
 	<div>
