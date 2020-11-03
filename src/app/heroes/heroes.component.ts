@@ -10,12 +10,16 @@ import { Hero } from '../hero';
 export class HeroesComponent implements OnInit {
 
   heroes = HEROES;
-  hero = this.heroes[0];
+  selected_hero = this.heroes[0];
 
   constructor() { 
   }
 
   ngOnInit(): void {
+  }
+
+  onSelect(hero : Hero){
+	  this.selected_hero = hero;
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="hero-list-div">
 	<h2> LIst of heroes : </h2>
 	<ul class="hero-list">
-		<li *ngFor="let hero_item of heroes">
+		<li *ngFor="let hero_item of heroes" (click)="onSelect(hero_item)">
 			<span class="hero-list-badge"> {{hero_item.id}}</span>
 			<span class="hero-list-name"> {{hero_item.name}}</span>
 		</li>
@@ -10,15 +10,15 @@
 <hr>
 
 <div class="hero-div">
-	<h2>{{hero.name | uppercase }}'s details : </h2>
+	<h2>{{selected_hero.name | uppercase }}'s details : </h2>
 	<div>
 		<span class="hero-id">
-			Id : {{hero.id}}
+			Id : {{selected_hero.id}}
 		</span>
 	</div>
 	<div>
 		<span class="hero-name">
-			Name : {{hero.name}}
+			Name : {{selected_hero.name}}
 		</span>
 	</div>
 </div>
@@ -28,5 +28,5 @@
 		<h2>Edit Hero</h2>
 	</div>
 	<label for="name"> Name : </label>
-	<input type="text" [(ngModel)]="hero.name" name="name" />
+	<input type="text" [(ngModel)]="selected_hero.name" name="name" />
 </div>
