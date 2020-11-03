@@ -1,7 +1,9 @@
 <div class="hero-list-div">
-	<h2> LIst of heroes : </h2>
+	<h2> List of heroes : </h2>
 	<ul class="hero-list">
-		<li *ngFor="let hero_item of heroes" (click)="onSelect(hero_item)">
+		<li *ngFor="let hero_item of heroes" 
+			(click)="onSelect(hero_item)"
+			[class.selected]="hero_item===selected_hero">
 			<span class="hero-list-badge"> {{hero_item.id}}</span>
 			<span class="hero-list-name"> {{hero_item.name}}</span>
 		</li>
@@ -9,7 +11,7 @@
 </div>
 <hr>
 
-<div class="hero-div">
+<div class="hero-div" *ngIf="selected_hero">
 	<h2>{{selected_hero.name | uppercase }}'s details : </h2>
 	<div>
 		<span class="hero-id">
@@ -21,12 +23,11 @@
 			Name : {{selected_hero.name}}
 		</span>
 	</div>
-</div>
-
-<div class="hero-edit">
-	<div class="edit-header">
-		<h2>Edit Hero</h2>
+	<div class="hero-edit">
+		<div class="edit-header">
+			<h2>Edit Hero</h2>
+		</div>
+		<label for="name"> Name : </label>
+		<input type="text" [(ngModel)]="selected_hero.name" name="name" />
 	</div>
-	<label for="name"> Name : </label>
-	<input type="text" [(ngModel)]="selected_hero.name" name="name" />
 </div>
